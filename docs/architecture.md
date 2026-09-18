@@ -11,7 +11,7 @@ university spreadsheet or an application API.
 ```mermaid
 flowchart TD
     Source[University workbook] --> Parse[Parse and normalize]
-    Parse --> Check{Validation and build pass?}
+    Parse --> Check{"Validation and build pass?"}
     Check -->|Yes| Release[Publish app with timetable]
     Check -->|No| Keep[Keep previous release]
     Release --> Cache[Service worker cache]
