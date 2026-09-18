@@ -26,6 +26,20 @@ upstream schedule files belong to a separate private repository.
 - `CHANGELOG.md`: verified, user-facing changes; exclude routine source checks.
 - `.github/ISSUE_TEMPLATE/`: concise bug and feature forms.
 
+## Repository presentation settings
+
+Recommended values for GitHub's About panel (these are repository settings, not
+fields that GitHub automatically reads from this file):
+
+- Description: `Offline-first student planner with schedules, homework, grades and an academic calendar.`
+- Website: `https://bsu-schedule-pwa.netlify.app`
+- Topics: `pwa`, `student-planner`, `offline-first`, `schedule`, `react`, `typescript`
+
+Keep the repository public and the application source private. Do not change
+repository visibility, rename repositories or add a license as part of updating
+presentation settings. If the current integration cannot edit About, report that
+limitation instead of claiming these settings were applied.
+
 ## Writing and evidence
 
 1. Keep the two README versions aligned whenever behavior, scope or links change.
