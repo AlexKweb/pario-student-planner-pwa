@@ -12,6 +12,12 @@ PWA · Offline first · Designed for phones
 
 </div>
 
+<p align="center">
+  <img src="assets/screenshots/schedule-iphone.png" width="320" alt="Pario on iPhone: Friday highlighted as today, class times, subgroup cards and bottom navigation" />
+</p>
+
+<p align="center"><sub>Pario running on iPhone · a real screenshot from the app</sub></p>
+
 ## A clearer view of your student day
 
 University timetables often live in a spreadsheet. Finding today's classes on a phone means opening the file, locating your group and checking the right row — again.
@@ -30,6 +36,27 @@ Pario turns that routine into a week you can scroll through. Open it from your H
 | **Look ahead** | A month calendar with Belarusian holidays and weekends, an exam-session countdown, and winter/spring study plans. |
 | **Make it comfortable** | Light, dark or system theme, compact cards and saved display preferences. |
 | **Use it without a connection** | The app and timetable are cached after a successful online load. Personal entries stay on your device. |
+
+## A look inside
+
+<table>
+  <tr>
+    <th>Personal grades · light theme</th>
+    <th>Calendar · dark theme</th>
+  </tr>
+  <tr>
+    <td valign="top"><img src="assets/screenshots/grades-light.jpg" width="380" alt="Gradebook with fictional grades, per-subject averages and an overall average of 9.2" /></td>
+    <td valign="top"><img src="assets/screenshots/calendar-dark.jpg" width="380" alt="Academic calendar with exam countdown and a selected Belarusian public holiday" /></td>
+  </tr>
+</table>
+
+**Homework and notes, grouped by subject**
+
+<p align="center">
+  <img src="assets/screenshots/diary-dark.jpg" width="540" alt="Diary with two example homework entries and one example study note" />
+</p>
+
+Screenshots show the real interface. Grades and diary entries are invented examples. Dates and countdowns reflect the capture date; [capture details](assets/README.md).
 
 ## Add it to your iPhone
 

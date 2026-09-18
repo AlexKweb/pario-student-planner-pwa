@@ -12,9 +12,10 @@ checks are not releases and are not listed here.
 - Documented architecture, offline behavior, daily updates and current limitations.
 - Added a roadmap that distinguishes the planned Planner from shipped features.
 - Added structured bug-report and feature-request forms.
+- Added the owner's iPhone screenshot and live captures with demo diary/grade data.
 
 Публичный репозиторий получил описание на двух языках, техническую документацию,
-планы развития и формы обратной связи. Код приложения остаётся приватным.
+планы развития, формы обратной связи и галерею настоящих скриншотов. Код приложения остаётся приватным.
 
 ### Current application snapshot / Текущее состояние приложения
 
