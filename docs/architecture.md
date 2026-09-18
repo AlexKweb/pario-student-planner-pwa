@@ -1,0 +1,95 @@
+# Architecture
+
+[English overview](../README.md) · [Обзор на русском](../README.ru.md) · [Data and offline behavior](data-and-offline.md)
+
+Pario is a static React application with a separate timetable preparation pipeline.
+The first useful screen reads bundled data. Opening the app does not wait for the
+university spreadsheet or an application API.
+
+## From source to screen
+
+```mermaid
+flowchart TD
+    Source[University workbook] --> Parse[Parse and normalize]
+    Parse --> Check{Validation and build pass?}
+    Check -->|Yes| Release[Publish app with timetable]
+    Check -->|No| Keep[Keep previous release]
+    Release --> Cache[Service worker cache]
+    Cache --> UI[React interface]
+    Local[Local grades and diary] <--> UI
+```
+
+The scheduled process checks the source independently of whether the user opens
+the app. Successful checks update freshness metadata, even when the workbook
+contents have not changed. The resulting app release carries the timetable and
+its check timestamp together.
+
+## Responsibilities and dependency direction
+
+The dependency direction is **presentation → application → domain**. The
+spreadsheet parser and browser adapters sit at the boundaries; the domain does
+not depend on React, browser storage, XLSX parsing or hosting.
+
+| Layer | Owns | Deliberately avoids |
+| --- | --- | --- |
+| **Domain** | Schedule selection and timing, Minsk dates, calendar rules, study-plan models, grade averages, diary validation and ordering | React components, network calls and browser APIs |
+| **Application** | Access to bundled schedules, preference/grade/diary persistence, service-worker update coordination | Visual layout and duplicated subject data |
+| **Presentation** | Pages, focused components, navigation, clock/scroll hooks and theme tokens | Reimplementing date rules, averages or persistence validation inside components |
+| **Data preparation** | Workbook parsing, merged-cell handling, group discovery and validated catalog generation | Runtime dependence on the university source |
+
+Study-plan data is separate from its table UI. Grades and diary entries reference
+known subjects rather than inventing a second subject list. User preferences,
+grades and diary entries have separate versioned storage formats and validation.
+
+## Decisions and tradeoffs
+
+| Decision | Why | Tradeoff |
+| --- | --- | --- |
+| Bundle the timetable with the app | First render can use data immediately; the same data works offline | A source update requires a new app release |
+| Cache the app with Workbox | Repeat visits can load without the network | Offline users keep their cached release until they reconnect |
+| Store personal entries locally | No account setup or server dependency for homework and grades | No cross-device sync or backup; clearing storage can remove records |
+| Use a single Minsk schedule clock | Classes and day boundaries stay consistent with the university timetable | Schedule time is intentionally different from a travelling user's local clock |
+| Validate before replacing data | Unexpected spreadsheet changes must not publish a partial timetable | A failed update keeps older data until the problem is resolved |
+| Keep holidays in the app | Calendar use does not depend on a holiday API | Year-specific transfers must be maintained explicitly |
+
+## Parser safeguards
+
+The source is a formatted workbook rather than a clean API. The parser discovers
+group and subgroup headers, interprets merged cells, preserves shared lessons,
+handles subgroup differences and uses effective lesson times. Date-specific
+entries are shown only in their relevant week.
+
+All configured groups are generated before the catalog is replaced. Structural
+and minimum-content checks reject empty or incomplete output. Generation writes
+to a temporary file before replacing the working catalog; the update workflow
+then runs the quality gates before committing the result.
+
+Lecture/practice classification follows conventions in the workbook, not an
+authoritative structured field. Upstream formatting changes can therefore need a
+parser adjustment. Validation reduces this risk; it cannot prove every source
+entry is semantically correct.
+
+## Quality checks
+
+The application repository uses strict TypeScript, ESLint, Vitest, schedule-data
+validation, icon integrity checks and a production build. Tests cover domain
+rules and boundaries such as time calculations, stored-data validation and
+service-worker update scheduling.
+
+The public repository contains documentation only. It does not publish the
+private test suite or display a build badge that readers cannot verify. Test
+counts and performance claims are intentionally omitted unless accompanied by a
+dated, reproducible measurement.
+
+## Technology
+
+| Area | Technology |
+| --- | --- |
+| Interface | React, TypeScript |
+| Build | Vite |
+| Offline delivery | vite-plugin-pwa, Workbox |
+| Verification | Vitest, ESLint, TypeScript |
+| Scheduled checks and CI | GitHub Actions |
+| Static hosting | Netlify |
+
+This describes the current implementation. It is not a source-code distribution.

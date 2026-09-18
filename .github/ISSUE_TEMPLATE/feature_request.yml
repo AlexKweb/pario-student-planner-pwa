@@ -1,0 +1,28 @@
+name: Feature idea / Идея
+description: Suggest an improvement through a real student use case. Можно на русском.
+title: "[Idea]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English and Russian are welcome. Check the roadmap and existing issues first if possible.
+        Можно писать на русском. По возможности посмотри roadmap и существующие идеи.
+  - type: textarea
+    id: need
+    attributes:
+      label: What would you like to do? / Что хочется делать?
+      description: Describe a situation in your day where Pario could help.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested behavior / Как это могло бы работать
+      description: What would you tap, enter or see?
+    validations:
+      required: true
+  - type: textarea
+    id: alternative
+    attributes:
+      label: Current workaround / Как решаешь сейчас
+      description: Optional. A simple example helps explain the need.

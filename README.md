@@ -37,7 +37,7 @@ Pario turns that routine into a week you can scroll through. Open it from your H
 2. Open **Share → Add to Home Screen** and confirm.
 3. Launch the Home Screen icon. After the app has finished caching, the timetable is available offline.
 
-The current app may still appear as **«Расписание»** in the installation dialog. Pario is the product name; the in-app branding is being updated separately.
+The current app may still appear as **«Расписание»** in the installation dialog. Pario is the product name; unifying the in-app branding is listed as a future idea.
 
 ## Built around a fast first screen
 
@@ -49,6 +49,8 @@ The phone doesn't download a spreadsheet every time the app opens. A separate up
 - **Local personal data:** grades, homework, notes and preferences are stored on the device; Pario does not synchronize them to an account.
 
 **Stack:** React · TypeScript · Vite · Workbox / PWA · Vitest · GitHub Actions · Netlify.
+
+Read the **[architecture](docs/architecture.md)** and **[data & offline guide](docs/data-and-offline.md)** for decisions, safeguards and tradeoffs.
 
 ## Current scope
 
@@ -65,6 +67,8 @@ The next planned navigation layout puts a dedicated **Planner** in the middle:
 **Schedule · Study · Planner · Calendar · Settings**
 
 The Planner's behavior is still being designed. The current app has four primary sections; the diary already lives inside Study.
+
+**[Roadmap](ROADMAP.md)** · **[Changelog](CHANGELOG.md)**
 
 ## About this repository
 

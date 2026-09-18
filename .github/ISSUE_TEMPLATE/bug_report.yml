@@ -1,0 +1,55 @@
+name: Bug report / Ошибка
+description: Report something that does not work as expected. Можно писать на русском.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English and Russian are welcome. This issue will be public: remove personal grades, notes and other private information from screenshots.
+        Можно писать на русском. Убери личные оценки и заметки со скриншотов — issue будет публичным.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened? / Что случилось?
+      description: Describe the actual behavior and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / Как повторить
+      placeholder: "1. Open… / Открыть…\n2. Tap… / Нажать…\n3. Observe… / Результат…"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Device and browser / Устройство и браузер
+      placeholder: "For example: iPhone, iOS version, Safari / версия iOS и браузер"
+    validations:
+      required: true
+  - type: dropdown
+    id: launch-mode
+    attributes:
+      label: How was Pario opened? / Как открыто приложение?
+      options:
+        - Browser tab / Вкладка браузера
+        - Home Screen app / С экрана Домой
+        - Not sure / Не знаю
+    validations:
+      required: true
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Connection / Подключение
+      options:
+        - Online / С интернетом
+        - Offline / Без интернета
+        - Not sure / Не знаю
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Extra context or screenshot / Детали или скриншот
+      description: For timetable issues, include the group, date and the last successful check shown in the app. Screenshots are optional.

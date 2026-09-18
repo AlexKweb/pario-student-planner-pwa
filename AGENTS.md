@@ -9,7 +9,8 @@ upstream schedule files belong to a separate private repository.
 - Do not copy application source, source workbooks, generated timetable catalogs,
   credentials, deployment identifiers or private repository links into this repo.
 - Personal grades, homework and notes must never be published. Use synthetic
-  entries for demonstrations, and use display preferences to hide teacher names.
+  entries for demonstrations. Prefer captures that do not expose teacher names
+  or unnecessary source data; do not assume a hide-names setting exists.
 - Do not change the private application or deploy it as a side effect of editing
   these documents.
 - Do not add an open-source license or badge that implies the app is open source.
