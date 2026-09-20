@@ -6,7 +6,7 @@
 
 A student planner that keeps your timetable, homework and grades close at hand — even offline.
 
-**[Open Pario ↗](https://bsu-schedule-pwa.netlify.app)** · **[Русский](README.ru.md)** · **[Share an idea](https://github.com/AlexKweb/pario-student-planner-pwa/issues)**
+**[Open Pario ↗](https://bsu-schedule-pwa.netlify.app)** · **[Русский](README.ru.md)** · **[What's new](CHANGELOG.md)** · **[Share an idea](https://github.com/AlexKweb/pario-student-planner-pwa/issues)**
 
 PWA · Offline first · Designed for phones
 
@@ -74,6 +74,7 @@ The phone doesn't download a spreadsheet every time the app opens. A separate up
 - **Safe updates:** a failed download, validation or build leaves the previous published timetable in place.
 - **Honest freshness:** the last successful source check is tracked separately from the source file's modification time.
 - **Local personal data:** grades, homework, notes and preferences are stored on the device; Pario does not synchronize them to an account.
+- **Safer saving:** failed diary saves keep the draft in the form. Reaching a record limit does not silently delete older entries.
 
 **Stack:** React · TypeScript · Vite · Workbox / PWA · Vitest · GitHub Actions · Netlify.
 

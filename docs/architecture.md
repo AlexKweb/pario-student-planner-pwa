@@ -41,6 +41,27 @@ Study-plan data is separate from its table UI. Grades and diary entries referenc
 known subjects rather than inventing a second subject list. User preferences,
 grades and diary entries have separate versioned storage formats and validation.
 
+ESLint enforces the domain and application import boundaries. Shared calendar
+helpers validate dates and move between calendar days without assuming that
+every local day lasts exactly 24 hours. Diary ordering and deadline state stay
+outside presentation components.
+
+## Local state and navigation
+
+A shared persistence boundary writes an edit before publishing the new value to
+the interface. Stores belong to mounted views rather than mutable global state;
+reading or subscribing never writes defaults back to storage. An unreadable or
+unsupported record format is distinguished from a missing record, and an edit
+must retry a failed read before it can replace stored data.
+
+Forms receive the save result. A failed diary save keeps the draft available to
+edit or retry. Record limits reject additions with feedback instead of silently
+evicting older entries. These safeguards do not provide backup or device sync.
+
+One browser-history adapter coordinates the main sections and Study views. It
+handles in-app navigation, direct hash changes and the browser's back/forward
+buttons so that the URL and visible view stay aligned.
+
 ## Decisions and tradeoffs
 
 | Decision | Why | Tradeoff |
@@ -59,6 +80,11 @@ group and subgroup headers, interprets merged cells, preserves shared lessons,
 handles subgroup differences and uses effective lesson times. Date-specific
 entries are shown only in their relevant week.
 
+Workbook traversal, lesson-time validation and subgroup interpretation are
+separate responsibilities. Impossible or reversed time ranges are rejected.
+Regression tests build a synthetic workbook to exercise merged cells, reordered
+group headers, shared rooms, distinct subgroups and missing or incomplete groups.
+
 All configured groups are generated before the catalog is replaced. Structural
 and minimum-content checks reject empty or incomplete output. Generation writes
 to a temporary file before replacing the working catalog; the update workflow
@@ -73,8 +99,10 @@ entry is semantically correct.
 
 The application repository uses strict TypeScript, ESLint, Vitest, schedule-data
 validation, icon integrity checks and a production build. Tests cover domain
-rules and boundaries such as time calculations, stored-data validation and
-service-worker update scheduling.
+rules and boundaries such as calendar transitions, storage read/write failures,
+record limits, browser navigation, service-worker retry scheduling and complete
+synthetic-workbook ingestion. See the [changelog](../CHANGELOG.md) for dated
+engineering changes.
 
 The public repository contains documentation only. It does not publish the
 private test suite or display a build badge that readers cannot verify. Test

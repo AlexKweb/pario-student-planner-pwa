@@ -23,7 +23,8 @@ upstream schedule files belong to a separate private repository.
 - `assets/`: real screenshots and presentation assets.
 - `docs/`: architecture, data lifecycle and user guidance.
 - `ROADMAP.md`: planned and exploratory work, clearly separated from shipped work.
-- `CHANGELOG.md`: verified, user-facing changes; exclude routine source checks.
+- `CHANGELOG.md`: verified product, engineering and documentation changes;
+  exclude routine automated source checks.
 - `.github/ISSUE_TEMPLATE/`: concise bug and feature forms.
 
 ## Repository presentation settings
@@ -39,6 +40,32 @@ Keep the repository public and the application source private. Do not change
 repository visibility, rename repositories or add a license as part of updating
 presentation settings. If the current integration cannot edit About, report that
 limitation instead of claiming these settings were applied.
+
+## Keep the public history current
+
+The owner requires a public update for **every assistant-authored commit pushed
+to the private application repository**. The private commit and its public
+documentation follow-up are one task; this is a contributor workflow, not an
+automated mirroring service.
+
+1. Add a concise English and Russian entry to `CHANGELOG.md` after each private
+   commit. Record the date, what changed and its practical effect. Append a new
+   bullet or subsection under the date instead of replacing earlier history.
+2. Include fixes, internal refactoring and maintenance. Label engineering work
+   honestly; do not describe it as a new user-facing feature. Separate committed
+   work from deployed behavior when publication has not yet been confirmed.
+3. Bring both READMEs and relevant guides up to date when behavior, scope or
+   architecture changes. Replace screenshots only when the interface changes.
+4. Publish a curated explanation, never raw private diffs, commit messages or
+   hashes, source files, private links or infrastructure identifiers. Keep the
+   existing personal-data boundaries intact.
+5. Save a focused public commit before reporting the private task complete or
+   starting the next private change. If access fails, report the pending public
+   update explicitly and complete it when access is restored.
+
+Routine automated source-check commits are not separate product milestones and
+remain excluded. Do not create another private commit just to acknowledge this
+public follow-up, or trigger a deployment for documentation-only changes.
 
 ## Writing and evidence
 
