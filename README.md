@@ -58,13 +58,21 @@ Pario turns that routine into a week you can scroll through. Open it from your H
 
 Screenshots show the real interface. Grades and diary entries are invented examples. Dates and countdowns reflect the capture date; [capture details](assets/README.md).
 
-## Add it to your iPhone
+## Install it on your phone
+
+### iPhone
 
 1. Open **[Pario in Safari](https://bsu-schedule-pwa.netlify.app)** while online.
 2. Open **Share → Add to Home Screen** and confirm.
 3. Launch the Home Screen icon. After the app has finished caching, the timetable is available offline.
 
-The current app may still appear as **«Расписание»** in the installation dialog. Pario is the product name; unifying the in-app branding is listed as a future idea.
+### Android
+
+1. Open **[Pario in Chrome](https://bsu-schedule-pwa.netlify.app)** while online.
+2. Open the **⋮** menu, tap **Install app** (or **Add to Home screen**, depending on Chrome), and follow the prompts.
+3. Launch the new icon while online. After the app has finished caching, the timetable is available offline.
+
+The installed app may still appear as **«Расписание»**. Pario is the product name; unifying the app's branding is a future idea.
 
 ## Built around a fast first screen
 
