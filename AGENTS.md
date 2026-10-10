@@ -75,7 +75,7 @@ public follow-up, or trigger a deployment for documentation-only changes.
 3. Describe shipped behavior in the present tense; label proposed features.
 4. The planned fifth navigation item, Planner, is not shipped yet.
 5. Explain that offline use requires an initial online load and retained browser
-   storage. Personal entries are local and currently have no backup or sync.
+   storage. Personal entries are local; manual JSON backup/import is available in Settings, but there is no automatic sync.
 6. Daily source refresh is scheduled for 22:00 Europe/Minsk (19:00 UTC), not a
    guaranteed delivery time. Do not restore the old weekly-refresh description.
 7. Prefer relative links for repository files and absolute HTTPS links for the app.

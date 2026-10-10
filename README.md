@@ -86,7 +86,7 @@ Pario currently serves **BSU, second-year Applied Mathematics, stream 2, groups 
 
 The timetable currently covers the **third semester of 2026–2027**. The study plan includes winter and spring subjects. This is an independent student project, not an official university service. The university source remains authoritative for classes and changes.
 
-An initial online load is required. Offline access uses the last cached version, and new timetable releases require a connection. Personal records are **local to this browser/device**: they do not follow you to another phone and can be lost if site data is cleared. Backup and sync are not available yet.
+An initial online load is required. Offline access uses the last cached version, and new timetable releases require a connection. Personal records are **local to this browser/device** and can be lost if site data is cleared unless you export a backup file. The Settings page offers manual offline JSON export/import to move grades, notes and homework between devices; keep the unencrypted backup file safe. Manual JSON backup and restoration are available in Settings; automatic sync is not.
 
 ## Where Pario is going
 
@@ -105,3 +105,11 @@ This is Pario's public home for product documentation, screenshots, plans and fe
 Found a bug or have an idea? **[Open an issue](https://github.com/AlexKweb/pario-student-planner-pwa/issues)** — English and Russian are both welcome. Documentation corrections are welcome as pull requests.
 
 If Pario is useful to you, a **star** helps others discover the project.
+
+
+## Back up your personal data
+
+Settings lets you export grades, homework and notes as a JSON file and
+restore them on another device, offline. Import validates the file and asks
+before replacing existing records. The file is **not encrypted**; store it
+securely. Automatic cloud synchronization is not available.

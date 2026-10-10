@@ -9,6 +9,20 @@ Routine automated timetable checks are not releases and are not listed here.
 публичной записью. Ежедневные автоматические проверки расписания не считаются
 отдельными релизами.
 
+## 2026-10-10 — Local backup / Резервная копия
+
+- Added offline JSON export and import of personal grades, homework and notes
+  in Settings. Imports validate the version, entries and subject IDs, ask before
+  replacing records, and attempt rollback if local saving fails. No account or
+  server-side synchronization is involved. The code is committed; deployment
+  status depends on the application build.
+
+- В настройках добавлены офлайн-экспорт и импорт оценок, ДЗ и заметок через
+  JSON. Перед заменой записей проверяются версия, поля и предметы, запрашивается
+  подтверждение; при ошибке записи предусмотрена попытка отката. Облачная
+  синхронизация не добавлялась. Код сохранён в репозитории, публикация зависит
+  от успешной сборки.
+
 ## 2026-09-20 — Project history / История проекта
 
 - Established a paired-commit workflow: every assistant-authored application

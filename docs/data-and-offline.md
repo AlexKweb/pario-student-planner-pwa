@@ -86,3 +86,17 @@ diary entries you want to keep. There is currently no built-in way to restore th
   Planner section are not current features.
 
 See [the roadmap](../ROADMAP.md) for the distinction between agreed work and ideas.
+
+
+## Manual personal-data backup / Резервное копирование
+
+Settings includes offline JSON export and import for grades, homework and notes.
+The export stays on the user's device; it is not automatically uploaded.
+Import validates the version and record structure, then requires confirmation
+before replacing existing records. Write failures trigger best-effort rollback.
+This is manual file-based transfer, **not** cloud synchronization or encrypted storage.
+Keep backup files secure.
+
+Настройки позволяют вручную сохранить или восстановить оценки, ДЗ и заметки
+в JSON без интернета. Перед заменой данных нужна проверка формата и подтверждение.
+Файл не зашифрован и не загружается автоматически в облако.
